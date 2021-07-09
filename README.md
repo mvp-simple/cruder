@@ -9,7 +9,7 @@
 
 ## Пример.
 
-```
+```go
 package main  
   
 import (  
@@ -102,7 +102,7 @@ func main() {
 
 Для добавления авторизации необходимо вызвать метод SetIdentity у роутера и в нем указать функцию которая будет проверять имеет ли право пользователь проходить внутрь по маршруту.
 
-```
+```go
 func auth(ctx cruder.IContext) (out bool) {  
 	if rand.Int63() < math.MaxInt64 / 2 {  
 		return false  
@@ -119,7 +119,7 @@ func main() {
 
 Хорошим тоном является в функции отвечающей за авторизацию добавлять идентификатор пользователя через методы:
 
-```
+```go
 // IContext.SetUserID(in int64) (out IContext)  
 // IContext.SetUserUUID(in string) (out IContext)
 
@@ -157,7 +157,7 @@ func auth(ctx cruder.IContext) (out bool) {
 
 Для гибкого изменения добавляемых функций CRUD в пакет добавлены ICruderOption.
 
-```
+```go
 	cruder.Uri(uriIn string)
 	cruder.OneModelCreator(model interface{})
 	cruder.Method(methodIn string)
@@ -179,7 +179,7 @@ func auth(ctx cruder.IContext) (out bool) {
 Изменяет метод по которому будет доступна функция.
 
 В пакете предопределены методы для более упрощения использования cruder.Method
-```
+```go
 	// Get завернутый в Method http.MethodGet  
 	cruder.Get = Method(http.MethodGet)  
 	// Head завернутый в Method http.MethodHead  
@@ -207,7 +207,7 @@ func auth(ctx cruder.IContext) (out bool) {
 
 ### Примеры использования ICruderOption
 
-```
+```go
 // ShowStructure пример структуры
 type ShowStructure struct {  
 	ID          uint `gorm:"primarykey"`  
