@@ -28,7 +28,6 @@ type ListResult struct {
 
 // interfaces
 
-
 type IBodyManager interface {
 	Bytes() (out []byte)
 	Json(in interface{}) (errOut error)
@@ -129,6 +128,3 @@ type IWriter interface {
 	StatusNotFound()
 	Write() (out IWriter)
 }
-
-
-
