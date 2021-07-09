@@ -81,8 +81,10 @@ func main() {
 	router := cruder.NewRouter()  
   
 	router.
-		Add(cruderShowStructure).     // Подключаем сформированные доя этого крудеры к роутеру
-		Add(cruderSecondStructure)    // Подключаем сформированные доя этого крудеры к роутеру  
+		// Подключаем сформированные доя этого крудеры к роутеру
+		Add(cruderShowStructure).  
+		// Подключаем сформированные доя этого крудеры к роутеру
+		Add(cruderSecondStructure)   
 
     // запускаем сервер
 	http.ListenAndServe(":2000", router)       
@@ -120,8 +122,10 @@ func auth(ctx cruder.IContext) (out bool) {
 	if rand.Int63() < math.MaxInt64 / 2 {  
 		return false  
 	}
-	ctx.SetUserID(rand.Int63())				// ID 	если вы используете идентификатором тип	int
-	ctx.SetUserUUID("0000-EXAMPLE-UUID")	// UUID	если Вы используете идентификатором тип	string
+	// ID 	если вы используете идентификатором тип	int
+	ctx.SetUserID(rand.Int63())
+	// UUID	если Вы используете идентификатором тип	string
+	ctx.SetUserUUID("0000-EXAMPLE-UUID")
 	return true  
 }
 ```
@@ -221,16 +225,16 @@ func main() {
 	cruderShowStructure := cruder.New(ShowStructure{}, gormDB)
 	cruderShowStructure.  
 		// для функции Create будет использоваться PATCH метод запроса
-		Create(cruder.Method(http.MethodPatch)).							
+		Create(cruder.Method(http.MethodPatch)).
 		// для функции Getбудет использоваться PUT метод запроса
-		Get(cruder.Put).	
-		// для функции List будет использваться структура SecondStructure 										
+		Get(cruder.Put).
+		// для функции List будет использваться структура SecondStructure
 		List(cruder.OneModelCreator(SecondStructure{})).
-		// функция Update с параметрами по умолчанию			
+		// функция Update с параметрами по умолчанию
 		Update().
-		// функция Restore с параметрами по умолчанию													
-		Restore().	
-		// функция Delete доступна по url "/api_special/delete/model") и с методом POST 												
-		Delete(cruder.Post,cruder.Uri("/api_special/delete/model"))	
+		// функция Restore с параметрами по умолчанию
+		Restore().
+		// функция Delete доступна по url "/api_special/delete/model") и с методом POST 
+		Delete(cruder.Post,cruder.Uri("/api_special/delete/model"))
 }
 ```
