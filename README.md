@@ -72,6 +72,7 @@ func main() {
 		Restore().	
 		// D	создаем метод Delete		  
 		Delete()	
+	
 	// создаем cruder для структуры SecondStructure
 	cruderSecondStructure := cruder.New(SecondStructure{}, gormDB)  
 	cruderSecondStructure.  
@@ -82,7 +83,7 @@ func main() {
 		// R	создаем метод Get Many	 
 		List()		
   
-	// Создаем роутер  
+	// Создаем роутер и подключаем круды 
 	router := cruder.NewRouter()  
   
 	router.
