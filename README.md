@@ -4,7 +4,7 @@
 
 [![golang](https://user-images.githubusercontent.com/26686461/125044308-a8c73380-e0bd-11eb-98ca-06795b3021c3.png)](https://golang.org/) [![gorm](https://user-images.githubusercontent.com/26686461/125044305-a82e9d00-e0bd-11eb-8f89-50e72053af47.png)](http://gorm.io/) [![crud](https://user-images.githubusercontent.com/26686461/125044299-a6fd7000-e0bd-11eb-99d9-2a7d97f3c066.png)](https://ru.wikipedia.org/wiki/CRUD)
 
-[![Test](https://github.com/rinatusmanov/doc/actions/workflows/tests.yml/badge.svg)](https://github.com/rinatusmanov/doc/actions/workflows/tests.yml)
+[![Test](https://github.com/mvp-simple/cruder/actions/workflows/tests.yml/badge.svg)](https://github.com/mvp-simple/cruder/actions/workflows/tests.yml)
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 ## Пример.
