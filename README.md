@@ -89,9 +89,8 @@ func main() {
 		// Подключаем сформированные доя этого крудеры к роутеру
 		Add(cruderShowStructure).  
 		// Подключаем сформированные доя этого крудеры к роутеру
-		Add(cruderSecondStructure)   
-
-    // запускаем сервер
+		Add(cruderSecondStructure)  
+	// запускаем сервер
 	http.ListenAndServe(":2000", router)       
 }
 ```
