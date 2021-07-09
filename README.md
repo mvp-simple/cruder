@@ -42,7 +42,12 @@ type SecondStructure struct {
 func main() {  
 	// инициализируем соединение с БД  
 	db, err := gorm.Open(
-		postgres.New(postgres.Config{DSN: "user=test password=test dbname=test port=5432 sslmode=disable TimeZone=Asia/Almaty", PreferSimpleProtocol: true}),
+		postgres.New(
+			postgres.Config{
+				DSN: "user=test password=test dbname=test port=5432 sslmode=disable TimeZone=Asia/Almaty", 
+				PreferSimpleProtocol: true,
+			}
+		),
 		&gorm.Config{},
 	)  
 	if err != nil {  
